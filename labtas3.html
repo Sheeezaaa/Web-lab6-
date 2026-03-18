@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>repeatMessage</title>
+</head>
+<body>
+
+<h2>Repeat Message</h2>
+<button onclick="repeatMessage()">Start</button>
+
+<p id="output"></p>
+
+<script>
+function repeatMessage() {
+    let num = prompt("Enter a number:");
+
+    if (num === null) {
+        alert("Program cancelled");
+        return;
+    }
+    num = Number(num);
+    if (isNaN(num) || num <= 0) {
+        alert("Please enter a valid positive number!");
+        return;
+    }
+    let message = prompt("Enter a message:");
+    if (message === null) {
+        alert("Program cancelled");
+        return;
+    }
+    let result = "";
+    for (let i = 1; i <= num; i++) {
+        result += message + "<br>";
+    }
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
